@@ -8,14 +8,16 @@ VALID_IDEA_GENERATORS = click.Choice(["game"], False)
 def CLI():
     pass
 
-@CLI.command('name')
+@CLI.command('name', help="Generates a name.")
 @click.argument('generator', type=VALID_NAME_GENERATORS)
-def name(generator: str = ""):
+@click.argument('amount', type=int)
+def name(generator: str = "", amount = 1):
     print(generator)
 
-@CLI.command('idea')
+@CLI.command('idea', help = "Generates an idea/concept.")
 @click.argument('generator', type=VALID_IDEA_GENERATORS)
-def name(generator: str = ""):
+@click.argument('amount', type=int)
+def name(generator: str = "", amount = 1):
     print(generator)
 
 if __name__ == "__main__":
