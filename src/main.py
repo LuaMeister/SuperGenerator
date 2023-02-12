@@ -1,13 +1,17 @@
+# Imports
 import click
 
+# Constants
 VALID_MODES = click.Choice(["name"], False)
 VALID_NAME_GENERATORS = click.Choice(["project"], False)
 VALID_IDEA_GENERATORS = click.Choice(["game"], False)
 
+# Click Groups
 @click.group()
 def CLI():
     pass
 
+# Click Commands
 @CLI.command('name', help="Generates a name.")
 @click.argument('generator', type=VALID_NAME_GENERATORS)
 @click.argument('amount', type=int)
